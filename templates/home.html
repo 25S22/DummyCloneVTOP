@@ -299,13 +299,13 @@
         document.querySelectorAll('.button').forEach(button => {
             button.addEventListener('click', function() {
                 if (this.classList.contains('student')) {
-                    window.location.href = 'login.html';
+                    window.location.href ="{{ url_for('login') }}";
                 } else if (this.classList.contains('employee')) {
-                    window.location.href = 'login.html';
+                    window.location.href = "{{ url_for('login') }}";
                 } else if (this.classList.contains('parent')) {
-                    window.location.href = 'login.html';
+                    window.location.href = "{{ url_for('login') }}";
                 } else if (this.classList.contains('alumni')) {
-                    window.location.href = 'login.html';
+                    window.location.href = "{{ url_for('login') }}";
                 }
             });
         });
