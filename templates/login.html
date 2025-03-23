@@ -98,7 +98,7 @@
     <div class="container">
         <div class="login-box">
             <h2>VTOP Login</h2>
-            <form action="https://dummy-login-backend-1.onrender.com//login" method="POST">
+            <form action="{{ url_for('login') }}" method="POST">
                 <div class="input-group">
                     <input type="text" name="username" placeholder="Username">
                     <i>👤</i>
@@ -112,7 +112,7 @@
             <div class="links">
                 <a href="#">Forgot Password</a>
                 <a href="#">Forgot LoginId</a>
-                <a href="home.html">Go to Home Page</a>
+                <a href="href="{{ url_for('login') }}"">Go to Home Page</a>
             </div>
         </div>
     </div>
