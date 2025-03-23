@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html')  # Looks inside templates/
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -20,4 +20,4 @@ def welcome():
     return render_template('welcome.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)  # Runs on Render's provided port
+    app.run(debug=True)  # Render handles ports automatically
