@@ -17,11 +17,12 @@
         }
         
         .header {
-            background-color: #1a4a9e;
+            background-color: #2567b0;
             color: white;
             padding: 10px 20px;
             display: flex;
             align-items: center;
+            height: 60px;
         }
         
         .logo {
@@ -30,20 +31,21 @@
         }
         
         .logo img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: #fff;
             border-radius: 50%;
-            padding: 5px;
+            padding: 2px;
+            margin-right: 10px;
         }
         
         .logo h1 {
-            margin-left: 10px;
             font-size: 28px;
+            font-weight: bold;
         }
         
         .campus {
-            margin-left: 10px;
+            margin-left: 5px;
             font-size: 18px;
         }
         
@@ -55,12 +57,28 @@
             font-size: 14px;
         }
         
+        .vtop-title {
+            text-align: center;
+            color: #2567b0;
+            font-size: 26px;
+            padding: 15px 0;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+        
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+        }
+        
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 10px 0;
         }
         
         .card {
@@ -68,10 +86,9 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 20px;
-            margin-bottom: 20px;
             flex: 1;
-            min-width: 250px;
-            margin: 10px;
+            min-width: 200px;
+            margin: 0 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -81,6 +98,10 @@
         .card-icon {
             width: 80px;
             height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .card h3 {
             margin-bottom: 15px;
         }
         
@@ -101,7 +122,6 @@
         }
         
         .button {
-            margin-top: 15px;
             padding: 10px;
             border: none;
             color: white;
@@ -111,6 +131,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 5px;
         }
         
         .button.student {
@@ -131,21 +152,20 @@
         
         .spotlight {
             flex-basis: 100%;
-            margin: 0 10px;
+            margin: 20px 10px;
         }
         
         .spotlight h2 {
             color: #d32f2f;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             padding-bottom: 5px;
-            border-bottom: 1px solid #ddd;
         }
         
         .spotlight-content {
             background-color: white;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
+            padding: 0;
         }
         
         .spotlight-link {
@@ -154,15 +174,20 @@
             color: #333;
             text-decoration: none;
             border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 30px;
         }
         
-        .spotlight-link:hover {
-            background-color: #f9f9f9;
+        .spotlight-link:before {
+            content: "⚡";
+            position: absolute;
+            left: 10px;
+            color: #d32f2f;
         }
         
         .more {
             text-align: right;
-            margin-top: 10px;
+            padding: 10px;
         }
         
         .more a {
@@ -187,39 +212,34 @@
         .app-section h3 {
             color: #1a73e8;
             margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .parent-app h3 {
+            color: #34a853;
+        }
+        
+        .app-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .app-links img {
             height: 40px;
             margin: 5px;
-            display: block;
         }
         
         .footer {
-            background-color: #1a4a9e;
+            background-color: #2567b0;
             color: white;
             text-align: center;
             padding: 10px;
             font-size: 12px;
             margin-top: 20px;
-        }
-        
-        /* List styles for spotlight */
-        .spotlight-content ul {
-            list-style: none;
-        }
-        
-        .spotlight-content ul li {
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 15px;
-        }
-        
-        .spotlight-content ul li:before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: #d32f2f;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -232,33 +252,39 @@
         <span class="campus">(Vellore Campus)</span>
     </div>
     
+    <div class="vtop-title">
+        VTOP translates to "VIT on TOP"
+    </div>
+    
     <div class="subheader">
         A digital initiative by the institute facilitating Faculty, Staff, Students, Parents and Alumni to access and process Academics, Research, Supporting services at one common platform.
     </div>
     
     <div class="container">
-        <div class="card">
-            <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjMWE3M2U4Ij48cmVjdCB4PSI0MCIgeT0iMTUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMTAiIHI9IjEwIi8+PHBhdGggZD0iTTY1LDMwIEw2NSwzNSBMNTAsNDUgTDM1LDM1IEwzNSwzMCBMNTAsMjAgTDY1LDMwWiIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iNTAiIHI9IjEwIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMTAiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjUwIiByPSIxMCIvPjxyZWN0IHg9IjIwIiB5PSI2NSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iNSIvPjxyZWN0IHg9IjQwIiB5PSI2NSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iNSIvPjxyZWN0IHg9IjYwIiB5PSI2NSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iNSIvPjwvZz48L3N2Zz4=" alt="Student Icon">
-            <h3 class="student">Student</h3>
-            <button class="button student">→</button>
-        </div>
-        
-        <div class="card">
-            <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjZmJiYzA1Ij48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIxMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzAiIHI9IjEwIi8+PGNpcmNsZSBjeD0iNzAiIGN5PSIzMCIgcj0iMTAiLz48cmVjdCB4PSIyMCIgeT0iNDUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI0MCIgcng9IjMiLz48cmVjdCB4PSI0MCIgeT0iNDUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI0MCIgcng9IjMiLz48cmVjdCB4PSI2MCIgeT0iNDUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI0MCIgcng9IjMiLz48L2c+PC9zdmc+" alt="Employee Icon">
-            <h3 class="employee">Employee</h3>
-            <button class="button employee">→</button>
-        </div>
-        
-        <div class="card">
-            <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjMzRhODUzIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyNSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjMzRhODUzIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjMwIiByPSIxNSIgZmlsbD0id2hpdGUiIHN0cm9rZT0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3MCIgcj0iMTUiIGZpbGw9IndoaXRlIiBzdHJva2U9IiMzNGE4NTMiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48L3N2Zz4=" alt="Parent Icon">
-            <h3 class="parent">Parent</h3>
-            <button class="button parent">→</button>
-        </div>
-        
-        <div class="card">
-            <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjMDBiY2Q0Ij48Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiByPSIxMCIvPjxjaXJjbGUgY3g9Ijc1IiBjeT0iMjUiIHI9IjEwIi8+PGNpcmNsZSBjeD0iMjUiIGN5PSI3NSIgcj0iMTAiLz48Y2lyY2xlIGN4PSI3NSIgY3k9Ijc1IiByPSIxMCIvPjxsaW5lIHgxPSIyNSIgeTE9IjI1IiB4Mj0iNzUiIHkyPSIyNSIgc3Ryb2tlPSIjMDBiY2Q0IiBzdHJva2Utd2lkdGg9IjMiLz48bGluZSB4MT0iMjUiIHkxPSIyNSIgeDI9IjI1IiB5Mj0iNzUiIHN0cm9rZT0iIzAwYmNkNCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9Ijc1IiB5MT0iMjUiIHgyPSI3NSIgeTI9Ijc1IiBzdHJva2U9IiMwMGJjZDQiIHN0cm9rZS13aWR0aD0iMyIvPjxsaW5lIHgxPSIyNSIgeTE9Ijc1IiB4Mj0iNzUiIHkyPSI3NSIgc3Ryb2tlPSIjMDBiY2Q0IiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PC9zdmc+" alt="Alumni Icon">
-            <h3 class="alumni">Alumni</h3>
-            <button class="button alumni">→</button>
+        <div class="card-container">
+            <div class="card">
+                <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjMWE3M2U4Ij48Y2lyY2xlIGN4PSI0MCIgY3k9IjI1IiByPSIxNSIvPjxjaXJjbGUgY3g9IjI1IiBjeT0iNDUiIHI9IjEwIi8+PGNpcmNsZSBjeD0iNDAiIGN5PSI0NSIgcj0iMTAiLz48Y2lyY2xlIGN4PSI1NSIgY3k9IjQ1IiByPSIxMCIvPjwvZz48L3N2Zz4=" alt="Student Icon">
+                <h3 class="student">Student</h3>
+                <button class="button student">→</button>
+            </div>
+            
+            <div class="card">
+                <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjZmJiYzA1Ij48Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiByPSIxMCIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iMjUiIHI9IjEwIi8+PGNpcmNsZSBjeD0iNTUiIGN5PSIyNSIgcj0iMTAiLz48cmVjdCB4PSIyMCIgeT0iNDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIyMCIgcng9IjUiLz48L2c+PC9zdmc+" alt="Employee Icon">
+                <h3 class="employee">Employee</h3>
+                <button class="button employee">→</button>
+            </div>
+            
+            <div class="card">
+                <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjMzRhODUzIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIyMCIvPjwvZz48L3N2Zz4=" alt="Parent Icon">
+                <h3 class="parent">Parent</h3>
+                <button class="button parent">→</button>
+            </div>
+            
+            <div class="card">
+                <img class="card-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjMDBiY2Q0Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxMCIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iMjAiIHI9IjEwIi8+PGNpcmNsZSBjeD0iMjAiIGN5PSI2MCIgcj0iMTAiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSIxMCIvPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iNjAiIHkyPSIyMCIgc3Ryb2tlPSIjMDBiY2Q0IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjAiIHkxPSIyMCIgeDI9IjIwIiB5Mj0iNjAiIHN0cm9rZT0iIzAwYmNkNCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjYwIiB5MT0iMjAiIHgyPSI2MCIgeTI9IjYwIiBzdHJva2U9IiMwMGJjZDQiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyMCIgeTE9IjYwIiB4Mj0iNjAiIHkyPSI2MCIgc3Ryb2tlPSIjMDBiY2Q0IiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+" alt="Alumni Icon">
+                <h3 class="alumni">Alumni</h3>
+                <button class="button alumni">→</button>
+            </div>
         </div>
         
         <div class="spotlight">
@@ -276,7 +302,7 @@
         </div>
         
         <div class="apps">
-            <div class="app-section">
+            <div class="app-section parent-app">
                 <h3>Parent App</h3>
                 <div class="app-links">
                     <a href="#"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNjAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iNjAiIHJ4PSI4IiByeT0iOCIgZmlsbD0iIzAwMCIvPjx0ZXh0IHg9IjUwIiB5PSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjZmZmIj5HRVQgSVQgT048L3RleHQ+PHRleHQgeD0iNTAiIHk9IjQ1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmIj5Hb29nbGUgUGxheTwvdGV4dD48Y2lyY2xlIGN4PSIyNSIgY3k9IjMwIiByPSIxNSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" alt="Google Play Store"></a>
@@ -293,22 +319,25 @@
             </div>
         </div>
     </div>
-    
     <script>
         // JavaScript for button actions
         document.querySelectorAll('.button').forEach(button => {
             button.addEventListener('click', function() {
                 if (this.classList.contains('student')) {
-                    window.location.href ="{{ url_for('login') }}";
+                    window.location.href = 'login.html';
                 } else if (this.classList.contains('employee')) {
-                    window.location.href = "{{ url_for('login') }}";
+                    window.location.href = 'login.html';
                 } else if (this.classList.contains('parent')) {
-                    window.location.href = "{{ url_for('login') }}";
+                    window.location.href = 'login.html';
                 } else if (this.classList.contains('alumni')) {
-                    window.location.href = "{{ url_for('login') }}";
+                    window.location.href = 'login.html';
                 }
             });
         });
     </script>
+    
+    <div class="footer">
+        Copyright © 2025 Software Development Cell, VIT, Vellore-632 014.
+    </div>
 </body>
-</html>
+</html>  
